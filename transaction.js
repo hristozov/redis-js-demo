@@ -1,7 +1,7 @@
 var redis  = require("redis"),
-    client = redis.createClient(), multi;
+    client = redis.createClient(),
+    multi = client.multi();
 
-multi = client.multi();
 multi.incr("cnt", redis.print);
 multi.incr("cnt2", redis.print);
 
